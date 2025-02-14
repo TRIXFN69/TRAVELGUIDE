@@ -1,19 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <title>Home</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script>https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js</script>
   <script>
     $(function(){
     $('.faq-list-item').click(function(){
 var $answer=$(this).find('.answer');
-      if ($answer).hasClass('open'))
+      if ($answer).hasClass('open')){
       $answer.removeClass('open');
+        $answer.slideUp();
+        $(this).find('span').text('+');
+      }
+      else{
+         $answer.addClass('open');
+        $answer.slideDown();
+        $(this).find('span').text('-');
+      }
     });
     });
   </script>
-<title>Home</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
   header{background:linear-gradient(red,green,white,black);width:100%;height:80px;text-align:center;}
   footer{background:linear-gradient(red,green,white,black);width:100%;height:80px;text-align:center;font-size:25px;}
